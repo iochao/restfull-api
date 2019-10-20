@@ -75,4 +75,14 @@ public class AppManagerController {
 		appService.remove(app.get());
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+	
+	@GetMapping(value = {"/", "/home"})
+    public ResponseEntity<String> homepage() {
+		return new ResponseEntity<>("Home", HttpStatus.OK);
+    }
+
+    @GetMapping("/hello")
+    public ResponseEntity<String> hello() {
+    	return new ResponseEntity<>("hello", HttpStatus.OK);
+    }
 }

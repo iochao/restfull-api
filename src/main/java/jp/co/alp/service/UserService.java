@@ -10,6 +10,8 @@ public interface UserService {
 
 	Optional<User> findById(Integer id);
 
+	User findByUsername(String username);
+
 	void save(User user);
 
 	void remove(User user);

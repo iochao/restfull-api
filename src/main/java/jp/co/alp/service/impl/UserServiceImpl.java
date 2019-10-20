@@ -13,10 +13,16 @@ import jp.co.alp.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
+
 	@Autowired
-    public UserServiceImpl (UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+	public UserServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
 
 	@Override
 	public List<User> findAllUser() {
